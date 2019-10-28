@@ -1,0 +1,19 @@
+4. Produce a table with all (cname, u, v, w, x, y, z) septuples
+where cname is the name of a corporation that has made at least one
+contribution and whose average contribution is at least as large as
+the average of all contributions, and
+
+u is the date of the first contribution by cname
+v is the date of the most recent contribution by cname
+w is number of contributions cname has made
+x is the sum of the amounts of those contributions
+y is the average amount of those contributions
+z is the number of different senators that cname has contributed to
+
+You may assume that the contributes table is not empty, so there will
+be an average contribution amount.
+
+Eliminate duplicates and order by cname.
+
+To obtain full credit you must use group by with aggregate operators
+and a having clause to filter the groups.

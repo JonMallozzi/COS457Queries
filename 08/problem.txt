@@ -1,0 +1,15 @@
+8.  A table with all (sen1, sen2) pairs where sen1 and sen2 are two
+different senator snames, with sen1 < sen2, and sen1 and sen2 were 
+present for exactly the same subset of roll calls, that is for 
+every roll call rc, sen1 cast a vote in rc iff sen2 cast a vote in rc.
+Recall, a roll call is identified by a (legnum, vdate) pair that 
+occurs in a row of the votes table.
+
+Eliminate duplicates and order by sen1, sen2.
+
+To obtain full credit, you must use the not exists contruct.
+
+Note, this defines an equivalence relation on senators.
+
+Hint: basically you do not want to find a roll call where sen1 voted
+and sen2 did not, nor a roll call where sen2 voted and sen1 did not.

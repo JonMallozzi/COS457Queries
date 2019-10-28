@@ -1,0 +1,8 @@
+ stname |           cname           |     sname     | age |   totrev   | population 
+--------+---------------------------+---------------+-----+------------+------------
+ CA     | Acme Mountain Gear        | Feinstein     |  46 |   50000000 |   29760021
+ CA     | Rockemwell Aerospace      | Feinstein     |  46 | 2147483647 |   29760021
+ IL     | Da Bulls Novelty Co.      | Moseley-Braun |  47 |   24235683 |   11430602
+ MD     | Northeast Burro Transport | Mikulski      |  49 |    8347902 |    4781468
+(4 rows)
+

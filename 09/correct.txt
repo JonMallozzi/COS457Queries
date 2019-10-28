@@ -1,0 +1,7 @@
+  sname   
+----------
+ Cohen
+ Mitchell
+ Pryor
+(3 rows)
+

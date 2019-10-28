@@ -1,0 +1,24 @@
+15. Recall, every roll call is identified by a legnum and a vdate.  
+
+Produce a table with a row for each roll call with columns
+
+vdate of the roll call
+
+legnum of the roll call
+
+moneyfor   the sum of all contributions made strictly prior to the roll call
+by corporations favorably affected by legnum(0 if none)
+
+moneyagainst  the sum of all contributions made strictly prior to the roll 
+call by corporations unfavorably affected by legnum(0 if none) 
+
+passed  true if the count of Yea votes in the roll call is greater than the sum of the
+counts of Nay and Abstain votes in the roll call, else false
+
+moneyTalks true if (moneyfor > moneyagainst and passed) or (moneyagainst >
+moneyfor and passed = false), else false
+
+Eliminate duplicates and order by vdate, legnum.
+
+
+You should use WITH to build up to this gradually.

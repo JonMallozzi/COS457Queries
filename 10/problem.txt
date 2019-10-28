@@ -1,0 +1,7 @@
+10. All (cname, ageave) where cname is a corporation and ageave is the average
+age for the set of senators who have voted Yea in a roll call involving some
+bill favorably affecting cname or Nay in a roll call on some bill unfavorably
+affecting cname and whom cname has contributed to.  
+If that set is empty, ageave should be 0.
+
+Eliminate duplicates and order by cname.

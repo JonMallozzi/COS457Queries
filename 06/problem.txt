@@ -1,0 +1,22 @@
+6. Produce a table with all sextuples (sname, u, v, w, x, y, z)
+where sname is a senator and
+
+u is the number of roll calls (identified by a (legnum, vdate) pair
+  that the senator attended and cast a vote (including Abstain)
+v is the number of times the senator voted Yea on a roll call
+w is the number of times the senator voted Nay on a roll call
+x is the date of the most recent Yea vote cast, or 'n/a' if v is 0
+y is the date of the most recent Nay vote cast, or 'n/a' if w is 0
+z is the date of the earliest Abstain vote cast, or 'n/a' if sname
+  never voted Abstain
+
+Eliminate duplicates and order by sname.
+
+To obtain full credit you must use outer join with group by and
+aggregate operators.
+
+Every senator should have exactly one row.
+
+Hint: you can use the case expression within the aggregate expression to
+obtain some of the counts that involve filters.  Some may require you
+to cast the result to varchar before using coalesce.

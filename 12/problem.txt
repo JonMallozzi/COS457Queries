@@ -1,0 +1,12 @@
+12. Redo #7 using the WITH construct to contruct two initial tables.  One
+with all (cname, sname, sum) triples where cname is a corporation, sname
+is a senator, and sum is the sum of all contributions from cname to sname,
+or 0 if there are none, the other with all 
+(cname, favaffecting, unfavaffecting) triples where cname is a corporation
+and the other two components are y and z from #7.  Use the same column
+labels from #7 so the results should be identical.
+
+Eliminate duplicates and order by cname.
+
+Hint: even with the two precalculated tables, you will need to do a nested
+select to obtain the average of all contributions made by the corporation.

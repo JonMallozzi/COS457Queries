@@ -1,0 +1,13 @@
+   sname   | age | stname 
+-----------+-----+--------
+ Biden     |  48 | DE
+ Bumpers   |  48 | AR
+ Dodd      |  46 | CT
+ Graham    |  49 | FL
+ Johnston  |  49 | LA
+ Kassebaum |  51 | KS
+ Kerry     |  49 | MA
+ Pryor     |  44 | AR
+ Shelby    |  46 | AL
+(9 rows)
+

@@ -1,0 +1,16 @@
+13. Recall a roll call is identified by (vdate, legnum) pair that occurs
+in a row of votes.  Produce a table with all
+
+(vdate, legnum, ryeas, rnays, rabs, dyeas, dnays, dabs, oyeas, onays, oabs)
+
+eleven-tuples where vdate,legnum are a roll call, ryeas is the count of
+Republican Yea votes on that roll call, rnays the count of Republican Nays,
+rabs is the count of Republican Abstains, and the d- and o- columns
+are the analogous counts for the Democrats and neither Republican
+nor Democrat categories (o for "other").
+
+Eliminate duplicates and order by vdate, legnum.
+
+There are many ways to do this, but the slickest and perhaps most efficient is
+to do a single group by on votes joined with senators using clever case
+expressions to count the correct values for the tally columns.

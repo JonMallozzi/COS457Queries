@@ -1,0 +1,11 @@
+3. Produce a table with all (cname, legnum, sname) triples where
+sname sponsors legnum, legnum favorably affects cname, cname has 
+contributed to sname, and cname and sname are from different states,
+and sname is a Republican and cname has total revenue >= 10,000,000
+
+
+Eliminate duplicates and order by cname, legnum, sname.
+
+To obtain full credit you must use (inner) joins of all the needed
+tables in the from clause, and impose filtering conditions that refer
+to single tables in the where clause.

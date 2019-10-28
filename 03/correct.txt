@@ -1,0 +1,13 @@
+         cname          | legnum |   sname   
+------------------------+--------+-----------
+ Acme Mountain Gear     |   1239 | Cochran
+ Acme Mountain Gear     |   1239 | Dole
+ Acme Mountain Gear     |   1239 | Lugar
+ Acme Mountain Gear     |   1239 | Mack
+ Acme Mountain Gear     |   1239 | Stevens
+ Boise Fertilizer, Inc. |   1236 | Murkowski
+ Boise Fertilizer, Inc. |   1236 | Stevens
+ Supro Toxics           |   1236 | Danforth
+ Supro Toxics           |   1236 | Stevens
+(9 rows)
+

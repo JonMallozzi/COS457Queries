@@ -1,0 +1,7 @@
+11. All (sname, sum) where sname is a senator, and sum is the sum of
+all contributions to sname from corporations who are favorably affected
+by some bill that sname sponsors.  Note, sum should be 0 if sname does
+not sponsor any bills or there are no such contributions to sname from 
+corporations favorably affected by a bill sname sponsors.
+
+Eliminate duplicates and order by sname.

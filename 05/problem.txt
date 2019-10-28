@@ -1,0 +1,14 @@
+5. Produce a table with all (sname, u, v, w, x) quintuples where sname
+is a senator and the rest are boolean values, specifically
+
+u is true if sname sponsors a bill, else false
+v is true if sname opposes a bill, else false
+w is true if sname has received a contribution else false
+x is true if sname has cast a vote that is either Yea or Nay, else false
+
+Eliminate duplicates and order by sname.
+
+To obtain full credit you use outer joins in the from clause, no where 
+clause filter, and appropriate expressions in the select list to obtain the
+other columns.  No need to aggregate here and no aggregate operators should
+be used.

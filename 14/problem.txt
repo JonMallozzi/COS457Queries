@@ -1,0 +1,33 @@
+14. This query is intended to measure the extent of partisanship on
+a particular roll call vote, that is, mark the vote as showing
+a great partisan divide.  Ignore abstentions, and for each roll call
+count the Yea's and Nay's for the two major parties, Democrat and Republican.
+Produce a table of (legnum, vdate, w, x, y, z, partisan) septuples where
+
+a. legnum, vdate identify the roll call
+b. w is 'Yea' if the there were more Democratic Yea votes than Nay votes,
+   'Nay' if more Democratic Nay votes than Yea votes, and 'Even' if the counts were
+   the same.
+c. x is the fraction of Democratic vote counts that went with the prevailing
+   vote of the party, or 0.500, if the the counts were even; for example, 
+   suppose there were 30 Democrat Yeas and 10 Democrat Nays.  Then
+   30/(30 + 10), which is 0.75, is the fraction of the vote that went with
+   the prevailing vote.
+d. y is analogous to w, but for Republicans
+e. z is analogous to x, but for Republicans
+f. partisan is true exactly when w and y are neither of them  'Even' and are
+   not equal, and x and z are both >= 0.6
+
+Eliminate duplicates and order by legnum and vdate.
+
+Hint: You should be able to adapt the solution to the previous query to
+obtain this.  Use the WITH construct to build up to the result.  To get
+accurate results you should cast the operands to the division the numerator
+when w is not 'Even' to double precision, for example
+
+cast(dyeas to double precision)/(dyeas + dnays)
+
+Integer division would truncate and the result would always be 0 or 1.  Note,
+if the denominator were 0, then the yeas and nays would both be 0, so w would
+be 'Even'.  Do not perform the division when the counts are equal, and you
+will never divide by 0.

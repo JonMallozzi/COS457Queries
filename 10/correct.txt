@@ -1,0 +1,49 @@
+             cname              |       ageave        
+--------------------------------+---------------------
+ Acme Mountain Gear             | 63.9000000000000000
+ Anchorage Igloos               | 60.0000000000000000
+ Avalanche Tours                | 59.0000000000000000
+ Bama Pork Rinds                | 58.4000000000000000
+ Bayou Development              | 59.3333333333333333
+ Big Swamp Realty               | 59.2500000000000000
+ Bilo Selhi Financial           | 58.7500000000000000
+ Blammo Toys, Inc.              | 59.7500000000000000
+ Blo Naway Developers           | 59.3333333333333333
+ Boise Fertilizer, Inc.         | 56.7500000000000000
+ Cactus Needle Co.              | 57.7500000000000000
+ Cogswell Cogs                  | 55.8571428571428571
+ Crashalot Air                  | 60.5000000000000000
+ Crawdads R Us                  | 60.2500000000000000
+ Da Bulls Novelty Co.           | 56.2500000000000000
+ Dead Canary Mining Corp.       | 55.4000000000000000
+ Dewey, Cheatem, & Howe         | 56.0000000000000000
+ Downeast Outfitters            | 51.5000000000000000
+ Flatland Chemicals             | 62.2000000000000000
+ Hiccup Liquors                 | 59.3333333333333333
+ Howard, Fine, &Howard          | 59.3333333333333333
+ Husky Corn Co.                 | 57.2500000000000000
+ Jimmys Peanuts                 | 58.5000000000000000
+ Levy Associates, Inc.          | 59.3333333333333333
+ Macon Bacon Corp.              | 61.6000000000000000
+ Makalottamula Publishers       | 54.6896551724137931
+ Maui Wowie Herbs               | 57.3333333333333333
+ Moonshine Fuels                | 56.0000000000000000
+ Mucho Smello Perfumes          | 56.7500000000000000
+ Nev Erpay Insurance            | 59.3333333333333333
+ Northeast Burro Transport      | 59.3333333333333333
+ Pattenaude Used Books          | 58.6000000000000000
+ Pluckin Chicken, Inc.          | 61.0000000000000000
+ Random Number Generators       |                   0
+ Rinky Dink Inc.                | 56.4615384615384615
+ Rockemwell Aerospace           | 59.5000000000000000
+ Simply SiliconBoards & Implant | 59.3333333333333333
+ Spacely Sprockets              | 58.5000000000000000
+ Spudlys Potato Products        | 56.0000000000000000
+ Stinkemup Plastics             | 59.3333333333333333
+ Stumpys Gator Farm             | 58.0000000000000000
+ Sunny Grove Pines              | 56.0000000000000000
+ Supro Toxics                   | 60.4000000000000000
+ Toto Pet Supply                | 56.0000000000000000
+ Wee Burnem Oil Fields          | 61.2500000000000000
+(45 rows)
+

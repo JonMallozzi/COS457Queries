@@ -1,0 +1,7 @@
+2. Produce a table with all sextuples 
+(stname, cname, sname, age, totrev, population) where sname and cname are
+from the same state and that state is stname, the total revenue of the 
+corporation is more than three halfs of the population of the state and 
+the senator is a female Democrat.
+
+Eliminate duplicates and order by stname, cname, and sname.

@@ -1,0 +1,38 @@
+7. Produce a table with all (cname, u, v, w, x, y, z)
+septuples where cname is the name of a corporation and
+
+u is the number of distinct senators that cname has contributed to
+v is the maximum, over all sums of contributions to individual senators,
+  that cname made, that is, suppose you had a table with two columns
+
+  senator1   sum of cname's contributions to senator1
+  senator2   sum of cname's contributions to senator2
+  senator3   sum of cname's contributions to senator3
+  ... 
+
+  v would be the maximum of the second column, or 0 if
+  cname made no contributions to any senators
+w is like v, only the minimum of the second column; again, 0 if
+  cname made no contributions to any senator
+x is the average of all contributions cname has made, 0 if
+  none were made
+y is the count of bills that favorably affect cname
+z is the count of bills that unfavorably affect cname
+
+Eliminate duplicates and order by cname.
+
+To obtain full credit, the query should have the structure
+
+select c.cname,
+   (nested selected for u) as u,
+   coalesce((nested select for v), 0) as v,
+   ...etc.
+from corporations c
+order by c.cname;
+
+that is, all the values u through z must be obtained within the
+select list using primarily nested select statements with an 
+external reference to c.cname.  Most are straightforward.
+v and w are quite tricky, but can be accomplished with 
+a group by including a having clause which uses the
+relationalOp all to find the maximum and minimum of the sums.

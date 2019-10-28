@@ -1,0 +1,5 @@
+1. Produce a table with columns sname, age and stname for all senators who are
+either female Republicans greater than 50 years old or male Democrats
+less than 50 years old.
+
+Eliminate duplicates and order by sname.

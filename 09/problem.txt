@@ -1,0 +1,25 @@
+9. A table with all sname values such that for every bill x,
+if x has ever been the subject of a roll call vote, then 
+sname has voted on some roll call vote involving x. Note,
+if the bill x was voted on in >1 roll call, sname need not
+have cast a ballot in all of the roll calls, but just in some
+one of them.
+
+Eliminate duplicates and order by sname.
+
+To obtain full credit you must use exists/not exists.
+
+Hint:  the following set up can be made to work
+
+select x.sname
+from senators x
+where  not exists(select 1
+                  from legislation y
+                  where y has been voted on in some roll call
+                     and x has never cast a ballot on a roll call
+                         involving y
+                 )
+order by x.sname;
+
+with appropriate nested queries with external references to x and
+and y.

@@ -1,0 +1,288 @@
+COS  457                     Database Systems
+
+Professor Briggs             Query Exercises
+
+Due date: October 28, 2019 @ 8:00 AM
+
+This homework is worth 24% of your final grade.
+
+Note, you have to write queries that would evaluate correctly to spec 
+for ANY extensions of the tables that satisfy their key constraints, 
+not just the particular extensions of our example database.
+
+You are to include your SQL queries and the results they obtain in a
+single text file with your name at the top and  formatted as follows
+
+your solution to first problem
+
+curtailed results your first query gets against the initial value of our database
+
+your solution to the second problem
+
+curtailed results your second query gets against the initial value of our database
+
+etc.
+
+When I say "curtailed",  I mean if the results returned are more than 30 rows, 
+just include the first 10 and the last 10 with a blank line in between them to
+mark the omission.  Leave in the statement of how many rows were in the
+result that comes at the end, however.
+
+
+So that I can compare your answers to mine, the queries should be run against
+the same initial database state.  You can use the base state from the current
+way it is loaded, and I will augment the script that creates those extensions
+later and send it to you with the results my solutions generate from that extension
+for comparison.
+
+You should use postgresql rather than some alternative dbms because there may
+be some variations in availability of operations and in formatting the results.
+
+There should be no differences between the results you get and the results 
+my solutions get if we start from the same database instance and use the same dbms.
+
+You should use the  postgresql commands \i and \o to read the queries from a
+text file script and write the results to a text file.  They are documented at
+
+https://www.postgresql.org/docs/9.3/static/app-psql.html
+
+in the section entitled "Meta-Commands"
+
+You can use the meta command \qecho to insert strings between the 
+query results to make them easier to cut and paste, and even label them,
+as in
+
+\qecho
+\qecho  Query 1 Results
+\qecho 
+
+That is how I obtained the answers I am including.
+
+How you should format the text of the queries is discussed below the query
+specifications.
+
+
+To construct your submission file, I recommend you work on the queries 
+individually during development, and create an SQL script file with them all,
+run it using \i  and \o, then cut and paste the results file pieces into a
+copy of the script file.
+
+In a query that returns multiple columns, always return them in the 
+order specified in the query and use the names I give you for labels.  SQL is
+case insensitive and will convert your labels to lower case unless you were to
+put double quotes around the labels.  For simplicity, I will just give you
+lower case labels.
+
+You can give an expression exp a label lab with
+
+select exp as lab, ...
+...
+
+You won't always have to do that; the default label for a column is its name.
+
+Note that the example database may not be a good basis for testing
+your queries. It's a chore to create test cases extensions for the queries,
+but you may want to do that.
+
+
+All of the queries will ask you to eliminate duplicates and 
+order by some column or columns.  THAT IS PART OF THE SPEC AND
+YOU WILL BE PENALIZED IF YOU DO NOT DO IT.  It makes it easier
+for me to see that your output agrees with mine.  In some cases it may
+not be necessary to use the distinct reserved word to force elimination
+of duplicates, but I always include it in the spec in case your query
+might otherwise produce duplicates.  It is necessary to always include 
+ORDER BY in the query, even when the results appear to be sorted as
+you want them w/o it.  If the order is not explicitly specified in the query,
+it will just be the byproduct of the algorithm the query processor chose.
+You will lose points if you neglect to include ORDER BY.  Generally 
+speaking, in the absence of ORDER BY the results are multisets that
+might be ordered any which way.
+
+Some of the queries will require you to use specific SQL constructs.
+You will be penalized 60% of the query's value if you write a correct
+query that does  not use the requested constructs.  Students sometimes
+will include some phony occurrence of the construct to pass this requirement,
+but I won't accept that.  I want you to demonstrate familiarity with a
+variety of constructs.  If you have doubts about whether you are satisfying
+this requirement for a specific query, you may ask me.
+
+Some queries provide hints on how to solve the query, but you are not
+required to follow hints.  If you are stuck on any query, you should consult
+w me.
+
+
+I do not want to see any nested select statement in the FROM clause of your
+queries.  Instead use the WITH construct to build up the tables you need.  You
+can use WITH whenever you think it's useful except in the queries that ask you
+to use other constructs.  I do not want you to have nested selects in the 
+FROM clause as it makes the query difficult to read.
+
+Remember, when you are asked for an aggregate operator  whose value
+could be affected by repeated values within the multiset (count, sum,
+avg) you must be careful that your query is not delivering an incorrect 
+value because of multiple join paths to the aggregated  value.
+
+If the query output refers to some item as a member of a specific entity set, 
+for example, "produce a table with all senators who have never voted",
+you are to produce the key for the entity set.  If the query wants other
+attributes it will say so.
+
+FORMATTING INSTRUCTIONS
+=======================
+
+
+Formatting Your Queries for Readability
+
+I'm going to have to read hundreds of these and determine if they are
+correct, and formatting them so I can readily parse them is not a
+frill.  I will heavily penalize queries that are poorly formatted.
+
+In a select block, whether nested or outermost, the keywords of the 
+major clauses
+
+SELECT
+FROM
+WHERE
+GROUP
+HAVING
+ORDER BY
+
+should always have the same margin and line up vertically. Code after such
+a reserved word on a line below it  that is still part of that clause must
+be indented from it, at least 3 columns and no more than 6.  
+
+DO NOT USE TABS TO INDENT.
+
+Tabs are displayed based on the tab stop settings, and yours may not agree
+with mine.  If I discover a tab in your submission I will just give it back
+to you to fix and you will in effect have no submission until you do.
+
+
+There should be no non-ws text between two such reserved words of a block
+from the left side of the sheet to the next level of indentation, that is,
+if we vertically drop to form the rectangle of space from the column that is
+3(or however many you are using) to the right of the column of the
+first letter of the reserved words to the left edge of the page and the rows
+below the first reserved word and above the second, that rectangle should be
+entirely white space.  
+
+Examples
+
+This is okay.
+
+select x.sname, x.party, x.age
+from senators x
+where x.age > 40 and x.party = 'Republican' or
+    x.gender = 'Female' 
+    and x.stname = 'ME'
+   
+This is not
+
+select x.sname,
+x.party, x.age
+from senators x
+where x.age > 40 and x.party = 'Republican' or
+x.gender = 'Female' 
+and x.stname = 'ME'
+
+
+It should be very easy to identify all the clauses of a query block.
+Since you can put them in the WITH clause, I do not want any queries 
+nested in the FROM clause, but nested queries might appear in the SELECT,
+WHERE, and HAVING clauses.   If the query is nested, it should  follow
+that same rule. The left and right parens enclosing a nested query 
+should similarly line up, as in
+
+select x.cname, (select count(*)
+                 from contributes y
+                 where x.cname = y.cname
+                ) as numOfContribs,
+    x.stname
+from corporations x
+where x.totrev > 10000000
+order by x.cname
+
+or if you prefer
+
+select x.cname,
+    (select count(*)
+     from contributes y
+     where x.cname = y.cname
+    ) as numOfContribs,
+    x.stname
+from corporations x
+where x.totrev > 10000000
+order by x.cname
+
+In the comparison of a scalar with a nested query result, I think it's
+better to have the scalar first, as in
+
+...
+where  x.totrev > (select avg(totrev)
+                   from corporations
+                  )
+
+but you may disagree.  
+
+...
+where (select avg(totrev)
+       from corporations
+      ) < x.totrev
+
+or 
+
+where (select avg(totrev)
+       from corporations
+      )
+      < x.totrev
+
+are still pretty readable.  If you have two nested query results being compared
+it is best to line them up and put the comparison operator between them.
+
+where (select min(totrev)
+       from corporations
+      )
+      < 
+      (select max(totrev)
+       from corporations
+      )x.totrev
+
+
+The  CASE and END keywords of case expressions should similarly line up.
+The WHEN and ELSE keywords of a case should be indented from it.  Any code
+on lines below the WHEN that is part of that when alternative should be
+indented from it.
+
+There are probably a variety of formats that are acceptable, and the WITH
+clause can also help by reducing the amount of nesting.  Something like
+
+with
+
+   tab1 as
+      (select ...
+      ),
+   tab2 as
+      (select ...
+      )
+...
+   tabk as
+      (select ...
+      )
+
+select ...
+
+with each of the preliminary tables formatted well should be fine.
+Do not crowd the expressions either.
+
+2 * i + 7 - 2 > x
+
+is clearly better than
+
+2*i+7-2>x
+
+Put blanks before and after binary operators.  When in doubt, air it out.
+
+If I find your submission difficult to read I will just send it back to you
+to be fixed.
+   
